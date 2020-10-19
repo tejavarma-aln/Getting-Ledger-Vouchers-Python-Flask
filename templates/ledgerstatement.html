@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{name}}</title>
+    <link type="text/css", href="{{ url_for('static', filename= 'appstyles.css') }}", rel="stylesheet">
+</head>
+<body>
+<h2 class="led_title">Ledger Vouchers</h2>
+<span>
+    <label class="led_name">Ledger : {{name}}</label>
+    <label class="led_period">{{from_dt}} to {{to_dt}}</label>
+</span>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Particulars</th>
+        <th>Vch Type</th>
+        <th>Vch No</th>
+        <th>Debit</th>
+        <th>Credit</th>
+    </tr>
+    {% for i in range(dt|length) %}
+    <tr>
+        <td>{{dt.__getitem__(i)}}</td>
+         <td>{{led.__getitem__(i)}}</td>
+         <td>{{vtype.__getitem__(i)}}</td>
+         <td>{{nos.__getitem__(i)}}</td>
+         <td>{{dr.__getitem__(i)}}</td>
+         <td>{{cr.__getitem__(i)}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

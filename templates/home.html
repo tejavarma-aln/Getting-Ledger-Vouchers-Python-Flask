@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link type="text/css", href="{{ url_for('static', filename= 'appstyles.css') }}", rel="stylesheet">
+</head>
+<body>
+<div class="form_container">
+<form method="POST" action="/ledgerStatement">
+    <img src="{{ url_for('static', filename= 'led-icon.png') }}"><br>
+    <label>Enter from date</label><br>
+    <input type="text" placeholder="Start date" class="form_input" name="fromDate"><br><br>
+    <label>Enter to date</label><br>
+    <input type="text" placeholder="End date" class="form_input" name="toDate"><br><br>
+    <label>Enter ledger name</label><br>
+    <input type="text" placeholder="Ledger name" class="form_input" name="ledger">
+    <input type="submit" value="Submit" class="submit_button">
+</form>
+</div>
+</body>
+</html>
